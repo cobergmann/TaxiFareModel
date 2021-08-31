@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Conradi/code/cobergmann/TaxiFareModel/mlruns/1/55fa426105664d12be03a953ec417f85/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 55fa426105664d12be03a953ec417f85
+run_uuid: 55fa426105664d12be03a953ec417f85
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1630421541020
+status: 1
+tags: []
+user_id: unknown
