@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import joblib
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
@@ -59,6 +60,9 @@ class Trainer(BaseEstimator, TransformerMixin):
         # return fitted pipeline
         return self.pipeline
 
+    def save_model(self):
+        """ Save the trained model into a model.joblib file """
+        return joblib.dump(self.pipeline, 'model.joblib')
 
     def evaluate(self, X_test, y_test):
         """evaluates the pipeline on df_test and return the RMSE"""
@@ -113,5 +117,7 @@ if __name__ == "__main__":
     trainer = Trainer(X_train, y_train)
     pipeline = trainer.set_pipeline()
     trainer.run()
+    # save model
+    trainer.save_model()
     # evaluate
     trainer.evaluate(X_test, y_test)
