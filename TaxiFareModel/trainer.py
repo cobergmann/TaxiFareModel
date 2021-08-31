@@ -49,8 +49,14 @@ class Trainer(BaseEstimator, TransformerMixin):
         """set and train the pipeline"""
 
         # set pipeline and fit it
-        self.pipeline = Trainer.set_pipeline(self)
+        self.pipeline = self.set_pipeline()
         self.pipeline.fit(self.X, self.y)
+
+        # mlflow helper
+        experiment_id = self.mlflow_experiment_id
+        print(f"experiment URL: https://mlflow.lewagon.co/#/experiments/{experiment_id}")
+
+        # return fitted pipeline
         return self.pipeline
 
 
